@@ -41,7 +41,7 @@ public class Player {
 
 	@Override
 	public String toString() {
-		return "Player [name=" + name + "," + " age=" + age + ", " + "gender=" + gender + ", dob=" + dob + "]";
+		return "name=" + name + "," + " age=" + age + ", " + "gender=" + gender + ", dob=" + dob;
 	}
 
 	public Player(String name, int age, String gender, String dob) {

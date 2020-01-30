@@ -20,6 +20,7 @@ public class Level1 {
 					+ "There he finds a box. He sees that the key to open a box is a combination of letters in order.\n"
 					+ "Find the right keyword and you may open the box");
 			Thread.sleep(2000);
+			
 			System.out.println("A,k,T,E \n" + "E,M \n" + "H,M,E,O");
 
 			in = sc.nextLine();
@@ -67,7 +68,7 @@ public class Level1 {
 				System.out.println("\n \n \n As the player receives the accessories he sets on his new adventure.");
 				Thread.sleep(2000);
 				System.out.println("********************Level I**************** \n"
-						+ "Welcome to the Jungle");
+						+ "Welcome to the Jungle ");
 				Thread.sleep(1000);
 				
 
