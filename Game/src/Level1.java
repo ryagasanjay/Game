@@ -6,6 +6,7 @@ public class Level1 {
 	String in = "";
 	Scanner sc = new Scanner(System.in);
 	Jungle j = new Jungle();
+	Utility u = new Utility();
 
 	public Level1() {
 
@@ -20,7 +21,7 @@ public class Level1 {
 					+ "There he finds a box. He sees that the key to open a box is a combination of letters in order.\n"
 					+ "Find the right keyword and you may open the box");
 			Thread.sleep(2000);
-			
+
 			System.out.println("A,k,T,E \n" + "E,M \n" + "H,M,E,O");
 
 			in = sc.nextLine();
@@ -58,19 +59,38 @@ public class Level1 {
 				System.out.println(
 						"Totem: Hi Player.. My name is alicia. Please take these items which will help you in your journey.\n \n");
 				Thread.sleep(1500);
-				System.out.println(
-						"Player: Alicia hands over a\n Map: To navigate to the destination present deep inside the mountains."
-								+ "\n Torch: to see places where its dark"
-								+ "\n Revolver: To protect himself. It contains only 6 rounds. Use them wisely and when absolutely necessary."
-								+ "\n Knife: To use as melee weapon."
-								+ "\n Rope with a hook: To reach for places he can't reach and lift things.");
+				System.out.println("Player: Alicia hands over a"
+						+ "\n Map: To navigate to the destination present deep inside the mountains."
+						+ "\n Torch: to see places where its dark"
+						+ "\n Gun: To protect himself. It contains only 6 rounds. Use them wisely and when absolutely necessary."
+						+ "\n Knife: To use as melee weapon."
+						+ "\n Rope with a hook: To reach for places he can't reach and lift things.");
 				Thread.sleep(1500);
 				System.out.println("\n \n \n As the player receives the accessories he sets on his new adventure.");
 				Thread.sleep(2000);
-				System.out.println("********************Level I**************** \n"
-						+ "Welcome to the Jungle ");
-				Thread.sleep(1000);
-				
+
+				System.out.println("Please check the map for further directions!! " + "\n type m for opening the map");
+
+				String choice = sc.next();
+
+				switch (choice) {
+				case "m":
+					System.out.println(choice);
+					System.out.println(u.useMap("Level1"));	
+					j.start();
+					break;
+				case "g":
+					u.usedGun();
+					break;
+				case "k":
+					u.useKnife();
+					break;
+				case "r":
+					u.useRope();
+					break;
+				default:
+					System.out.println("Continuing..");
+				}
 
 			}
 		} catch (Exception e) {
