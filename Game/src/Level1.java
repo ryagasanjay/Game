@@ -69,7 +69,7 @@ public class Level1 {
 				System.out.println("\n \n \n As the player receives the accessories he sets on his new adventure.");
 				Thread.sleep(2000);
 
-				System.out.println("Please check the map for further directions!! " + "\n type m for opening the map");
+				System.out.println("Please check the map for further directions!! " + "\n type map for opening the map");
 
 				String choice = sc.next();
 

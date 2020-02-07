@@ -12,5 +12,9 @@ public interface Actables {
 	public int useKnife();
 
 	public String useRope();
+	
+	public String shoot();
+	
+	public String chop();
 
 }

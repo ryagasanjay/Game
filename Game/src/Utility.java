@@ -28,9 +28,21 @@ public class Utility implements Actables {
 
 	@Override
 	public String useRope() {
-		return "";
+		return "Clang.!! Anchored..!! CLimbing now.";
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public String shoot() {
+		// TODO Auto-generated method stub
+		return "Boom..!! You killed it.";
+	}
+
+	@Override
+	public String chop() {
+		// TODO Auto-generated method stub
+		return "Chopped into Two..!! You sliced it.";
 	}
 
 }
