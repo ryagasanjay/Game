@@ -6,6 +6,8 @@ public class Jungle extends Utility {
 	// String[] count= {};
 	Scanner sci = new Scanner(System.in);
 	Utility u = new Utility();
+	
+	
 
 	public void start() throws Exception {
 		findpattern();
@@ -101,7 +103,8 @@ public class Jungle extends Utility {
 					System.out.println("Player chose to ignore it.. He might regret it later.. :P");
 				Thread.sleep(2000);
 				System.out.println("Player safely came out of the Jungle.");
-				
+				Level2 l2 = new Level2();
+				l2.start();
 			}
 
 		}
