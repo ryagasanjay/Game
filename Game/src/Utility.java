@@ -83,7 +83,7 @@ public class Utility implements Actables {
 			return "You cannot do that. You know it.";
 		}
 	}
-
+	
 	@Override
 	public String examine(String in) {
 		// TODO Auto-generated method stub

@@ -145,14 +145,15 @@ public class Level2 extends Utility {
 		}
 		if (inst.contains("attack")) {
 			Thread.sleep(1000);
-			System.out.println("Attacking the Dragon");
+			System.out.println("Attacking the Dragon\n" + "Energy of the Dragon :" + Obstacles.DragonHP);
 			int dragonHp = Obstacles.DragonHP;
 			String ins = "";
 			while (dragonHp > 100) {
-				
+
 				System.out.println("How do you want to attack? Gun or Knife");
 				ins = scl.next();
 				dragonHp -= attackDragon(ins);
+				System.out.println("Remaining Energy of the Drragon :" + dragonHp);
 			}
 			System.out.println("The Dragon is breathing fire and will incenerate you..");
 			System.out.println("How do you want to defend yourself? roll or duck");
@@ -163,17 +164,37 @@ public class Level2 extends Utility {
 			if (ins.contains("duck")) {
 				System.out.println("You ducked from fire and escaped.. dragon egg fell from the bag on the ground..");
 			}
-			Thread.sleep(500);
-			System.out.println("Dragon notices the egg and became calm.. Player picks it up and leaves it at the dragon hesistently..");
-			Thread.sleep(500);
-			System.out.println("Dragon became so calm and offered help to go to the mountain peak with its egg.");
-			Thread.sleep(500);
-			System.out.println("Player reaches the Mountain peak and places the totem at its place.");
-			Thread.sleep(500);
-			System.out.println("Alicia: You have lifted the curse placed on the TOTEM and helped this place to be serene.");
-			Thread.sleep(500);
-			System.out.println("Thank you so much");
 			Thread.sleep(1000);
+			System.out.println(
+					"Dragon notices the egg and became calm.. Player picks it up and leaves it at the dragon hesistently..");
+			Thread.sleep(1500);
+			System.out.println("Dragon became so calm and offered help to go to the mountain peak with its egg.");
+			Thread.sleep(1500);
+			System.out.println("Player reaches the Mountain peak and You have to place the totem at its place now.");
+			Thread.sleep(1500);
+			System.out.println("To place the totem there is a barrier to break? I don't think i can break it.");
+			Thread.sleep(1000);
+			System.out.println("The Mysterious hooded figure appeared again. \n"
+					+ "Hooded Figure: Hello Player, I can lift the barrier if you return the key you took from me in the jungle.");
+			System.out.println("Would you like to use any items from your bag?");
+			u.getChoices();
+			do {
+				ins = scl.next();
+				if (ins.contains("map") || ins.contains("rope") || ins.contains("knife") || ins.contains("gun")) {
+					System.out.println("You know you can't use that..");
+				} else if (ins.contains("key")) {
+					System.out.println("You gave the key to the Mysterious Hooded figure and the Barrier is lifted.");
+				}
+
+			} while (!ins.contains("key"));
+			Thread.sleep(1500);
+			System.out.println("Player placed the Totem in its place.");
+			Thread.sleep(1000);
+			System.out.println(
+					"Alicia: You have lifted the curse placed on the TOTEM and helped this place to be serene.");
+			Thread.sleep(1500);
+			System.out.println("Thank you so much");
+			Thread.sleep(2000);
 			System.out.println("******* THE END *********");
 		}
 

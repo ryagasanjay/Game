@@ -1,5 +1,4 @@
 import java.util.*;
-import java.lang.*;
 
 public class Level1 {
 
@@ -63,7 +62,7 @@ public class Level1 {
 					"He opens the box he finds a Totem.\nScreen flashes and he vanishes and enters a magical world.\n"
 							+ "The totem comes to life and tells player that he needs to return him to his resting place in order to lift the curse on him."
 							+ "Player thinks this could give him very good content for his paper. \n"
-							+ "Do you want to play along ?");
+							+ "Do you want to play along ? \n yes or no");
 
 			in = sc.next();
 			while (!in.toLowerCase().equalsIgnoreCase("yes") && !in.toLowerCase().equalsIgnoreCase("no")) {
@@ -74,19 +73,19 @@ public class Level1 {
 				sc.close();
 				System.out.println("sorry.. you need to leave");
 			} else {
-				Thread.sleep(2000);
+				Thread.sleep(1000);
 				System.out.println(
 						"Totem: Hi Player.. My name is alicia. Please take these items which will help you in your journey.\n \n");
-				Thread.sleep(1500);
+				Thread.sleep(1000);
 				System.out.println("Player: Alicia hands over a"
-						+ "\n Map: To navigate to the destination present deep inside the mountains."
-						+ "\n Torch: to see places where its dark"
-						+ "\n Gun: To protect himself. It contains only 6 rounds. Use them wisely and when absolutely necessary."
-						+ "\n Knife: To use as melee weapon."
-						+ "\n Rope with a hook: To reach for places he can't reach and lift things.");
-				Thread.sleep(1500);
+						+ "\nMap: To navigate to the destination present deep inside the mountains."
+						+ "\nTorch: to see places where its dark"
+						+ "\nGun: To protect himself. It contains only 6 rounds. Use them wisely and when absolutely necessary."
+						+ "\nKnife: To use as melee weapon."
+						+ "\nRope with a hook: To reach for places he can't reach and lift things.");
+				Thread.sleep(1000);
 				System.out.println("\n \n \n As the player receives the accessories he sets on his new adventure.");
-				Thread.sleep(2000);
+				Thread.sleep(1000);
 
 				System.out
 						.println("Please check the map for further directions!! " + "\n type map for opening the map");
@@ -94,18 +93,18 @@ public class Level1 {
 				String choice = sc.next();
 
 				switch (choice) {
-				case "m":
+				case "map":
 					System.out.println(choice);
 					System.out.println(u.useMap("Level1"));
 					j.start();
 					break;
-				case "g":
+				case "gun":
 					u.usedGun();
 					break;
-				case "k":
+				case "knife":
 					u.useKnife();
 					break;
-				case "r":
+				case "rope":
 					u.useRope();
 					break;
 				default:

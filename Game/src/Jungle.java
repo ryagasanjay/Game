@@ -1,18 +1,21 @@
 import java.util.Scanner;
 
 public class Jungle extends Utility {
-	private int move;
 	public final String x = "left right up down";
 	// String[] count= {};
 	Scanner sci = new Scanner(System.in);
 	Utility u = new Utility();
-	
-	
+	String in = "";
 
 	public void start() throws Exception {
 		findpattern();
 		String path = followPath();
 
+		while (!path.equalsIgnoreCase("down down right right") & !path.equalsIgnoreCase("down right down right")) {
+			System.out.println(
+					"C'mon.. Do You think you can reach the ladder there with this path pattern.. Try again..");
+			path = followPath();
+		}
 		if (path.equalsIgnoreCase("down down right right") || path.equalsIgnoreCase("down right down right")) {
 			Thread.sleep(2000);
 			System.out.println("CONGRATULATIONS..!!"
@@ -53,7 +56,8 @@ public class Jungle extends Utility {
 								"You used a knife on the Bear. Now it's angry. It's charging towards you.. What do you want to do?\n"
 										+ "Hint: Bears are afraid of loud noises and fire.");
 					} else {
-						System.out.println("Invalid Input");
+						System.out.println("Hey be serious.. It might kill you.."
+								+ "Did you know: Bears tend to kill people if they are funny with them :P");
 					}
 				} while (!in.equalsIgnoreCase("gun"));
 
@@ -67,7 +71,7 @@ public class Jungle extends Utility {
 				System.out.println("You need something to anchor. You need something to pull yourself up.");
 				Thread.sleep(1000);
 				System.out.println("Use : ");
-				String in = "";
+
 				do {
 					in = sci.next();
 					if (in.equalsIgnoreCase("map"))
@@ -79,35 +83,42 @@ public class Jungle extends Utility {
 					if (in.equalsIgnoreCase("rope"))
 						System.out.println(u.useRope());
 				} while (!in.equalsIgnoreCase("rope"));
-
-				Thread.sleep(1000);
-				System.out.println("It's a beautiful morning to continue your adventure..");
-				Thread.sleep(1000);
-				System.out.println(
-						"The player is almost out of the woods.. Suddenly something attacks the player and trying to kill him..");
-				System.out.println("What do you want to use?");
-
-				in = sci.next();
-				if (in.equalsIgnoreCase("gun"))
-					System.out.println(u.shoot());
-				if (in.equalsIgnoreCase("knife"))
-					System.out.println(u.chop());
-
-				System.out.println("Mysterious thing dropped a key. What do you want to do?\n"
-						+ "Press 1: Pick it up \n" + "OR\n" + "0: Ignore it.");
-				int key = sci.nextInt();
-				Thread.sleep(1500);
-				if (key == 1)
-					System.out.println("Player picked up the key and put in the bag.");
-				else
-					System.out.println("Player chose to ignore it.. He might regret it later.. :P");
-				Thread.sleep(2000);
-				System.out.println("Player safely came out of the Jungle.");
-				Level2 l2 = new Level2();
-				l2.start();
 			}
-
 		}
+
+		Thread.sleep(1000);
+		System.out.println("It's a beautiful morning to continue your adventure..");
+		Thread.sleep(1000);
+		System.out.println(
+				"The player is almost out of the woods.. Suddenly something attacks the player and trying to kill him..");
+		System.out.println("What do you want to use?");
+
+		in="";
+		do {
+			System.out.println("Man it's trying to kill you..Choose something with which you can attack like a knife.. ");
+			in = sci.next();
+		}while(!in.equalsIgnoreCase("gun") & !in.equalsIgnoreCase("knife"));
+
+		if (in.equalsIgnoreCase("gun"))
+			System.out.println(u.shoot());
+		if (in.equalsIgnoreCase("knife"))
+			System.out.println(u.chop());
+
+		
+		System.out.println("Mysterious thing dropped a key. What do you want to do?\n" + "Press 1: Pick it up \n"
+				+ "OR\n" + "0: Ignore it.");
+		int key = sci.nextInt();
+		Thread.sleep(1500);
+		if (key == 1) {
+			System.out.println("Player picked up the key and put in the bag.");
+			u.addItemToBag("key");
+		}else {
+			System.out.println("Player chose to ignore it.. He might regret it later.. :P");
+		}
+		Thread.sleep(2000);
+		System.out.println("Player safely came out of the Jungle.");
+		Level2 l2 = new Level2();
+		l2.start();
 	}
 
 	private String followPath() {
@@ -147,6 +158,9 @@ public class Jungle extends Utility {
 		for (int i = 1; i <= 3; i++) {
 			for (int j = 1; j <= i; j++) {
 				System.out.print("*");
+				if (i == 3 && j == 3) {
+					System.out.print(" |=|");
+				}
 			}
 			System.out.println();
 		}
