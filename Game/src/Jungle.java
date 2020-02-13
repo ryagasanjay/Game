@@ -1,13 +1,21 @@
 import java.util.Scanner;
 
-public class Jungle extends Utility {
+public class Jungle {
 	public final String x = "left right up down";
 	// String[] count= {};
 	Scanner sci = new Scanner(System.in);
-	Utility u = new Utility();
+	int numberOfMoves;
+	Utility u;
 	String in = "";
 
-	public void start() throws Exception {
+	public Jungle(Utility u2) {
+		// TODO Auto-generated constructor stub
+		this.u = u2;
+	}
+
+	public void start(int numberOfMoves) throws Exception {
+		this.numberOfMoves = numberOfMoves;
+		
 		findpattern();
 		String path = followPath();
 
@@ -19,8 +27,9 @@ public class Jungle extends Utility {
 		if (path.equalsIgnoreCase("down down right right") || path.equalsIgnoreCase("down right down right")) {
 			Thread.sleep(2000);
 			System.out.println("CONGRATULATIONS..!!"
-					+ "\nYOU HAVE CLEARED YOUR FIRST OBSTACLE IN THIS ADVENTURE.\n\n BOY YOU'RE VERY SMART.. :P");
-			System.out.println("********************Level I**************** \n" + "Welcome to the Jungle ");
+					+ "\nYOU HAVE CLEARED YOUR FIRST OBSTACLE IN THIS ADVENTURE.\n\n BOY YOU'RE VERY SMART.. :P \n ");
+			Thread.sleep(2000);
+			System.out.println("********************Level I: NOBODY IS SAFE IN THE JUNGLE**************** \n \n");
 			Thread.sleep(1000);
 
 			System.out.println(
@@ -30,15 +39,20 @@ public class Jungle extends Utility {
 			Thread.sleep(1000);
 			System.out.println(
 					"Player : WoW.. It's so dark. I can't see anything and i don't think i can go any further. \n"
-							+ "I need to find some place to sleep to continue my journey..!!");
+							+ "I need to find some place to sleep to continue my journey..!!\n");
 			Thread.sleep(1000);
 			System.out.println("You found a Cave..!! Would you like to stay here ?"
 					+ "\nInput: 1 = Go to Cave or 0 : Look for other options. ");
-			int input = sci.nextInt();
+
+			int input = 0;
+			do {
+				input = sci.nextInt();
+				numberOfMoves++;
+			} while (input != 1 & input != 0);
 
 			if (input == 1) {
-				System.out.println("Player called it a night. zzzzZZZZZZZZ \n..."
-						+ "He hears a sound in the middle of the night.. Somethings approaching him..");
+				System.out.println("Player entered the cave. Player called it a night. zzzzZZZZZZZZ \n..."
+						+ "You hear a sound in the middle of the night.. Somethings approaching you..\n");
 				Thread.sleep(2000);
 				System.out.println("Sounds like its a bear. You need to do something fast to scare it away."
 						+ "\nWhat do you want to use? Gun or Knife?");
@@ -46,6 +60,7 @@ public class Jungle extends Utility {
 				String in = "";
 				do {
 					in = sci.next();
+					numberOfMoves++;
 					if (in.equalsIgnoreCase("gun")) {
 						System.out
 								.println("You used gun to shoot. Bear ran away, scared by the loud noise of the Gun.");
@@ -74,6 +89,7 @@ public class Jungle extends Utility {
 
 				do {
 					in = sci.next();
+					numberOfMoves++;
 					if (in.equalsIgnoreCase("map"))
 						System.out.println("Map cannot help you here");
 					if (in.equalsIgnoreCase("gun"))
@@ -83,41 +99,57 @@ public class Jungle extends Utility {
 					if (in.equalsIgnoreCase("rope"))
 						System.out.println(u.useRope());
 				} while (!in.equalsIgnoreCase("rope"));
+				Thread.sleep(1000);
+				System.out.println("Player called it a night. zzzzZZZZZZZZ \n...");
 			}
 		}
 
-		Thread.sleep(1000);
-		System.out.println("It's a beautiful morning to continue your adventure..");
-		Thread.sleep(1000);
+		System.out.println("You can now sleep peacefully.\n\n");
+		Thread.sleep(2000);
+		System.out.println("After 8 hrs..");
+		Thread.sleep(2000);
 		System.out.println(
-				"The player is almost out of the woods.. Suddenly something attacks the player and trying to kill him..");
-		System.out.println("What do you want to use?");
+				"It's a beautiful morning to continue your adventure.. Player woke up and running towards the exit of the jungle..");
+		Thread.sleep(1000);
+		System.out.println("The player is almost out of the woods.. Suddenly something attacks the player.. \n");
+		System.out.println("What do you want to do?\n" + "Use: ");
+		u.getChoices();
 
-		in="";
+		in = "";
 		do {
-			System.out.println("Man it's trying to kill you..Choose something with which you can attack like a knife.. ");
+			System.out.println(
+					"Man it's trying to kill you..Choose something with which you can attack like a knife..\n ");
 			in = sci.next();
-		}while(!in.equalsIgnoreCase("gun") & !in.equalsIgnoreCase("knife"));
+			numberOfMoves++;
+		} while (!in.equalsIgnoreCase("gun") & !in.equalsIgnoreCase("knife"));
 
 		if (in.equalsIgnoreCase("gun"))
 			System.out.println(u.shoot());
 		if (in.equalsIgnoreCase("knife"))
 			System.out.println(u.chop());
 
-		
+		Thread.sleep(2000);
 		System.out.println("Mysterious thing dropped a key. What do you want to do?\n" + "Press 1: Pick it up \n"
 				+ "OR\n" + "0: Ignore it.");
-		int key = sci.nextInt();
 		Thread.sleep(1500);
+
+		int key = 0;
+		do {
+			key = sci.nextInt();
+			numberOfMoves++;
+		} while (key != 1 & key != 0);
+
 		if (key == 1) {
-			System.out.println("Player picked up the key and put in the bag.");
+			System.out.println("Player picked up the key and put in the bag.\n");
 			u.addItemToBag("key");
-		}else {
-			System.out.println("Player chose to ignore it.. He might regret it later.. :P");
+		} else {
+			System.out.println("Player chose to ignore it.. He might regret it later.. :P\n");
 		}
+
 		Thread.sleep(2000);
-		System.out.println("Player safely came out of the Jungle.");
-		Level2 l2 = new Level2();
+		System.out.println("Player safely came out of the Jungle.\n \n");
+		System.out.println("Total number of moves until Jungle is finished is :" + numberOfMoves);
+		Level2 l2 = new Level2(u,numberOfMoves);
 		l2.start();
 	}
 
@@ -131,6 +163,7 @@ public class Jungle extends Utility {
 				System.out.println("You have entered insufficient path commands. Please try again..!!");
 			}
 			pattern = sci.nextLine();
+			numberOfMoves++;
 			count = pattern.split(" ");
 			// System.out.println(count.length);
 		} while (count.length != 4);
@@ -154,7 +187,7 @@ public class Jungle extends Utility {
 	private void findpattern() {
 		// TODO Auto-generated method stub
 		System.out.println("The path you're looking for is in this navigational pattern"
-				+ "Key words you can use are:\n up\n down\n left \n right");
+				+ "Key words you can use are:\n" + "up \n" + "down \n" + "left \n" + "right");
 		for (int i = 1; i <= 3; i++) {
 			for (int j = 1; j <= i; j++) {
 				System.out.print("*");

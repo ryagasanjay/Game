@@ -17,11 +17,17 @@ public class Utility implements Actables {
 		bag.add(item);
 	}
 
+	public void removeItemToBag(String item) {
+		bag.remove(item);
+	}
+
 	@Override
 	public String useMap(String level) {
 		// TODO Auto-generated method stub
 		if (level == "Level1") {
-			mapInfo = "You have entered Level 1.\n" + "You need to find the right path to clear this level and,"
+			mapInfo = "The game has two levels one is Level 1 which needs you to clear a jungle passage.\n \n"
+					+ "Once you clear the Jungle your Map will let you know further information.\n \n"
+					+ "For now, You have entered Level 1.\n \n" + "You need to find the right path to clear this level and,"
 					+ "\nGo to the Jungle where your next endeavour awaits. ";
 		}
 
@@ -90,7 +96,6 @@ public class Utility implements Actables {
 		if (in.contains("ball")) {
 			return "No..It's a dragon egg.. Just hope there is no dragon around.. :O :O";
 		}
-		bag.add("egg");
 		return "Yes..It's a dragon egg.. I can't believe it.I hope there is no dragon around.. :O :O";
 
 	}

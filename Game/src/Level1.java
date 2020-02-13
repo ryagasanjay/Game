@@ -3,9 +3,11 @@ import java.util.*;
 public class Level1 {
 
 	String in = "";
+	int numberOfMoves = 0;
 	Scanner sc = new Scanner(System.in);
-	Jungle j = new Jungle();
+	
 	Utility u = new Utility();
+	Jungle j = new Jungle(u);
 
 	public Level1() {
 
@@ -18,21 +20,26 @@ public class Level1 {
 			int age;
 			System.out.println("Hi.. What's your name by the way ?");
 			name = sc.next();
-
+			numberOfMoves++;
+			
 			System.out.println("Hello " + name + " How old are ya?");
 			age = sc.nextInt();
+			numberOfMoves++;
 
 			System.out.println(name + ", Are you a handsome boy or a beautiful girl?");
 			gender = sc.next();
-
+			numberOfMoves++;
+			
 			System.out.println(name + ",Could you enter the date of Birth for me?");
 			dob = sc.next();
+			numberOfMoves++;
+			
 			System.out.println("Grreat.. Let me save that for a moment");
 			Player p = new Player(name, age, gender, dob);
 			System.out.println("Awesome.. So " + p.getName()
 					+ ",Let us begin with our little text adventure now.. So one day you are walking on the streets of Montreal..");
 			System.out.println(
-					"\n Wind gushes in.. an old crumbled paper flews past the guy in front of him and sticks on his face."
+					"\n Wind gushes in.. an old crumbled paper flews past the guy in front of him and sticks on his face.\n"
 							+ "He takes a look at the paper and he sees a map and there is an address inscribed on its back. \n \n"
 							+ "TO ONLY THE MAN WITH HEART, COMES THE GREAT TREASURE. \n \n"
 							+ "Excited the player wants to go pursue the adventure. So he goes to the mentioned address"
@@ -43,9 +50,11 @@ public class Level1 {
 			System.out.println("A,k,T,E \n" + "E,M \n" + "H,M,E,O");
 
 			in = sc.nextLine();
+			numberOfMoves++;
 			while (!in.toLowerCase().trim().equalsIgnoreCase("take me home")) {
 				System.out.println("Enter a valid input");
 				in = sc.nextLine();
+				numberOfMoves++;
 			}
 
 			startJourney();
@@ -65,52 +74,53 @@ public class Level1 {
 							+ "Do you want to play along ? \n yes or no");
 
 			in = sc.next();
+			numberOfMoves++;
 			while (!in.toLowerCase().equalsIgnoreCase("yes") && !in.toLowerCase().equalsIgnoreCase("no")) {
 				System.out.println("Enter a valid input");
 				in = sc.next();
+				numberOfMoves++;
 			}
 			if (in.equalsIgnoreCase("no")) {
 				sc.close();
-				System.out.println("sorry.. you need to leave");
+				System.out.println("OH.!! Thats so Bad.. Just rerun if you wanted to have fun some time.");
 			} else {
 				Thread.sleep(1000);
 				System.out.println(
 						"Totem: Hi Player.. My name is alicia. Please take these items which will help you in your journey.\n \n");
 				Thread.sleep(1000);
-				System.out.println("Player: Alicia hands over a"
+				System.out.println("Player: Alicia hands over a\n"
 						+ "\nMap: To navigate to the destination present deep inside the mountains."
 						+ "\nTorch: to see places where its dark"
 						+ "\nGun: To protect himself. It contains only 6 rounds. Use them wisely and when absolutely necessary."
 						+ "\nKnife: To use as melee weapon."
-						+ "\nRope with a hook: To reach for places he can't reach and lift things.");
+						+ "\nRope with a hook: To reach for places he can't reach and lift things.\n \n \n");
 				Thread.sleep(1000);
-				System.out.println("\n \n \n As the player receives the accessories he sets on his new adventure.");
+				System.out.println("As the player receives the accessories he sets on his new adventure.");
 				Thread.sleep(1000);
 
-				System.out
-						.println("Please check the map for further directions!! " + "\n type map for opening the map");
+				System.out.println("Please check the map for further directions!! " + "\nType map for opening the map");
+				
+				String choice = "";
+				do {
+					choice = sc.next();
+					numberOfMoves++;
 
-				String choice = sc.next();
-
-				switch (choice) {
-				case "map":
-					System.out.println(choice);
-					System.out.println(u.useMap("Level1"));
-					j.start();
-					break;
-				case "gun":
-					u.usedGun();
-					break;
-				case "knife":
-					u.useKnife();
-					break;
-				case "rope":
-					u.useRope();
-					break;
-				default:
-					System.out.println("Continuing..");
-				}
-
+					switch (choice) {
+					case "map":
+						System.out.println(choice);
+						System.out.println(u.useMap("Level1"));
+						j.start(numberOfMoves);
+						break;
+					case "gun":
+						u.usedGun();
+					case "knife":
+						u.useKnife();
+					case "rope":
+						u.useRope();
+					default:
+						System.out.println("Continuing.. See map for further instructions..");
+					}
+				} while (!choice.equalsIgnoreCase("map"));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
