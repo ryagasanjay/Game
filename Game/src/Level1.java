@@ -12,15 +12,34 @@ public class Level1 {
 
 		try {
 
-			System.out.println("Player is on his way to College and walking towards the station.."
-					+ "\n His mind wanders off thinking of what to write for his paper for writing an adventure story for his arts class. "
-					+ "\n Wind gushes in.. an old crumbled paper flews past the guy in front of him and sticks on his face."
-					+ "He takes a look at the paper and he sees a map and there is an address inscribed on its back. \n"
-					+ "TO ONLY THE MAN WITH HEART, COMES THE GREAT TREASURE. \n"
-					+ "Excited the player wants to go pursue the adventure. So he goes to the mentioned address"
-					+ "There he finds a box. He sees that the key to open a box is a combination of letters in order.\n"
-					+ "Find the right keyword and you may open the box");
-			Thread.sleep(2000);
+			System.out.println("I am on my way to Home and walking towards the station.."
+					+ "\n My mind is wandering everywhere thinking of what to create a game for my OOP Assignment. "
+					+ "This is what i came up with the following adventure.. Hope you enjoy  :) ");
+			String name, gender, dob;
+			int age;
+			System.out.println("Hi.. What's your name by the way ?");
+			name = sc.next();
+
+			System.out.println("Hello " + name + " How old are ya?");
+			age = sc.nextInt();
+
+			System.out.println(name + ", Are you a handsome boy or a beautiful girl?");
+			gender = sc.next();
+
+			System.out.println(name + ",Could you enter the date of Birth for me?");
+			dob = sc.next();
+			System.out.println("Grreat.. Let me save that for a moment");
+			Player p = new Player(name, age, gender, dob);
+			System.out.println("Awesome.. So " + p.getName()
+					+ ",Let us begin with our little text adventure now.. So one day you are walking on the streets of Montreal..");
+			System.out.println(
+					"\n Wind gushes in.. an old crumbled paper flews past the guy in front of him and sticks on his face."
+							+ "He takes a look at the paper and he sees a map and there is an address inscribed on its back. \n \n"
+							+ "TO ONLY THE MAN WITH HEART, COMES THE GREAT TREASURE. \n \n"
+							+ "Excited the player wants to go pursue the adventure. So he goes to the mentioned address"
+							+ "There he finds a box. He sees that the key to open a box is a combination of letters in order.\n"
+							+ "Find the right keyword and you may open the box");
+			Thread.sleep(1000);
 
 			System.out.println("A,k,T,E \n" + "E,M \n" + "H,M,E,O");
 
@@ -69,14 +88,15 @@ public class Level1 {
 				System.out.println("\n \n \n As the player receives the accessories he sets on his new adventure.");
 				Thread.sleep(2000);
 
-				System.out.println("Please check the map for further directions!! " + "\n type map for opening the map");
+				System.out
+						.println("Please check the map for further directions!! " + "\n type map for opening the map");
 
 				String choice = sc.next();
 
 				switch (choice) {
 				case "m":
 					System.out.println(choice);
-					System.out.println(u.useMap("Level1"));	
+					System.out.println(u.useMap("Level1"));
 					j.start();
 					break;
 				case "g":

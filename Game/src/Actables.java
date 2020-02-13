@@ -1,9 +1,8 @@
 
 public interface Actables {
 
-	String choices[] = { "map", "gun", "knife", "rope" };
-	public final int HP_LOST_WEN_GUNNED = 10;
-	public final int HP_LOST_WEN_KNIVED = 5;
+	public final int HP_LOST_WEN_GUNNED = 30;
+	public final int HP_LOST_WEN_KNIVED = 15;
 
 	public String useMap(String level);
 
@@ -12,11 +11,13 @@ public interface Actables {
 	public int useKnife();
 
 	public String useRope();
-	
+
 	public String shoot();
-	
+
 	public String chop();
-	
-	
+
+	public String examine(String in);
+
+	public String UseItemfromBag(String in);
 
 }

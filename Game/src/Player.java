@@ -49,7 +49,7 @@ public class Player {
 		this.age = age;
 		this.gender = gender;
 		this.dob = dob;
-		Level1 lev = new Level1();
+//		Level1 lev = new Level1();
 	}
 
 }

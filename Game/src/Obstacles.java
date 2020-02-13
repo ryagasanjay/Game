@@ -1,9 +1,11 @@
 
 public interface Obstacles {
 
+	public static int DragonHP = 200;
+	
 	public String instructions();
 	
 	public String info();
 	
-	public String hints(int number);
+	public int hpDamaged(int number);
 }
