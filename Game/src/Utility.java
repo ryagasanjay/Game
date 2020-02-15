@@ -5,6 +5,11 @@ public class Utility implements Actables {
 	ArrayList<String> bag = new ArrayList<String>();
 
 //	String[] bag = { "map", "gun", "knife", "rope" };
+	
+	/**
+	 * Method: Utility() constructor of the Utility class which contains all the methods required and be used by the character actables.
+	 * 
+	 * */
 	public Utility() {
 		bag.add("map");
 		bag.add("gun");
@@ -65,6 +70,10 @@ public class Utility implements Actables {
 		return "Chopped into Two..!! You sliced it.";
 	}
 
+	/**
+	 * Method: getChoices() will print all the items in a bag.
+	 * Pattern path riddle
+	 * */
 	public void getChoices() {
 
 		for (String i : bag) {
@@ -72,6 +81,9 @@ public class Utility implements Actables {
 		}
 	}
 
+	/**
+	 * Method: method to use any item present in the Bag.
+	 * */
 	@Override
 	public String UseItemfromBag(String in) {
 		// TODO Auto-generated method stub
@@ -98,5 +110,29 @@ public class Utility implements Actables {
 		}
 		return "Yes..It's a dragon egg.. I can't believe it.I hope there is no dragon around.. :O :O";
 
+	}
+
+	/**
+	 * Method: findPattern.
+	 * Pattern path riddle Obstacle
+	 * */
+	@Override
+	public void findPattern() {
+		// TODO Auto-generated method stub
+
+		// TODO Auto-generated method stub
+		System.out.println("The path you're looking for is in this navigational pattern"
+				+ "Key words you can use are:\n" + "up \n" + "down \n" + "left \n" + "right");
+		for (int i = 1; i <= 3; i++) {
+			for (int j = 1; j <= i; j++) {
+				System.out.print("*");
+				if (i == 3 && j == 3) {
+					System.out.print(" |=|");
+				}
+			}
+			System.out.println();
+		}
+	
+		
 	}
 }

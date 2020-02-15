@@ -8,15 +8,25 @@ public class Jungle {
 	Utility u;
 	String in = "";
 
+	/**
+	 * Method: Start Jungle class Constructor.
+	 * @param Utility Object
+	 * */
 	public Jungle(Utility u2) {
 		// TODO Auto-generated constructor stub
 		this.u = u2;
 	}
 
+	/**
+	 * Method: Start .
+	 * @param int number of Moves 
+	 * calls the findPattern first riddle.
+	 * At the end calls the Level2 constructor
+	 * */
 	public void start(int numberOfMoves) throws Exception {
 		this.numberOfMoves = numberOfMoves;
 		
-		findpattern();
+		u.findPattern();
 		String path = followPath();
 
 		while (!path.equalsIgnoreCase("down down right right") & !path.equalsIgnoreCase("down right down right")) {
@@ -153,6 +163,10 @@ public class Jungle {
 		l2.start();
 	}
 
+	/**
+	 * Method: followPath()
+	 * method to take the right pattern commands
+	 * */
 	private String followPath() {
 		String pattern = "";
 		String[] count = {};
@@ -183,20 +197,4 @@ public class Jungle {
 		}
 		return pattern;
 	}
-
-	private void findpattern() {
-		// TODO Auto-generated method stub
-		System.out.println("The path you're looking for is in this navigational pattern"
-				+ "Key words you can use are:\n" + "up \n" + "down \n" + "left \n" + "right");
-		for (int i = 1; i <= 3; i++) {
-			for (int j = 1; j <= i; j++) {
-				System.out.print("*");
-				if (i == 3 && j == 3) {
-					System.out.print(" |=|");
-				}
-			}
-			System.out.println();
-		}
-	}
-
 }

@@ -18,6 +18,10 @@ public class Level2Obstacles implements Obstacles {
 				+ "fwd   : Moving the boat forward \n" + "stop  : Stopping the boat \n";
 	}
 
+	/**
+	 * Method: hpDamaged.
+	 * Dragon Obstacle damage counter
+	 * */
 	@Override
 	public int hpDamaged(int number) {
 		// TODO Auto-generated method stub

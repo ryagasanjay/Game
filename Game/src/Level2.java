@@ -8,10 +8,20 @@ public class Level2 extends Utility {
 	int numberOfMoves;
 	Utility u;
 
+	/**
+	 * Method: Level2() Constructor.
+	 * @param Utility
+	 * @param numberOfMoves
+	 * */
 	public Level2(Utility u3,int numberOfMoves) {
 		this.u = u3;
 		this.numberOfMoves = numberOfMoves;
 	}
+	
+	/**
+	 * Method: Level2.start().
+	 * continues the story for Level 2
+	 * */
 
 	public void start() throws Exception {
 		// TODO Auto-generated method stub
@@ -140,6 +150,10 @@ public class Level2 extends Utility {
 
 	}
 
+	/**
+	 * Method: bossLevel().
+	 * continues the story for Level 2 where the player is fighting the last dragon
+	 * */
 	private void bossLevel() throws Exception {
 
 		System.out.println("A big paper came flying fell on your face.. Would you like to read? Input: read or throw");

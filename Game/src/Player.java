@@ -43,7 +43,15 @@ public class Player {
 	public String toString() {
 		return "name=" + name + "," + " age=" + age + ", " + "gender=" + gender + ", dob=" + dob;
 	}
-
+	
+	
+	/**
+	 * Method: Player() constructor for collecting the information of the player.
+	 * @param name
+	 * @param age
+	 * @param gender
+	 * @param dob
+	 * */
 	public Player(String name, int age, String gender, String dob) {
 		this.name = name;
 		this.age = age;

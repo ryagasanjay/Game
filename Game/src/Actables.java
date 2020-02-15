@@ -19,5 +19,7 @@ public interface Actables {
 	public String examine(String in);
 
 	public String UseItemfromBag(String in);
+	
+	public void findPattern();
 
 }

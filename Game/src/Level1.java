@@ -9,6 +9,9 @@ public class Level1 {
 	Utility u = new Utility();
 	Jungle j = new Jungle(u);
 
+	/**
+	 * Level1 Constructor is the first class called for this adventure where it begins.
+	 * */
 	public Level1() {
 
 		try {
@@ -64,6 +67,10 @@ public class Level1 {
 		}
 	}
 
+	/**
+	 * Method: Start Journey Begins the adventure after collecting the player information.
+	 * At the end we call the Jungle class.
+	 * */
 	public void startJourney() {
 
 		try {
