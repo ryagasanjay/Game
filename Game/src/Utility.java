@@ -83,6 +83,8 @@ public class Utility implements Actables {
 
 	/**
 	 * Method: method to use any item present in the Bag.
+	 * @param in
+	 * specified item when using this method
 	 * */
 	@Override
 	public String UseItemfromBag(String in) {
