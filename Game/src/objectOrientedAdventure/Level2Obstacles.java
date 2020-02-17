@@ -16,7 +16,7 @@ public class Level2Obstacles implements Obstacles {
 	public String info() {
 		// TODO Auto-generated method stub
 		return "Boat Controls: \n" + "Enter : \n" + "right : Steering right \n" + "left  : Steering left \n"
-				+ "fwd   : Moving the boat forward \n" + "stop  : Stopping the boat \n";
+				+ "fwd  : Moving the boat forward \n" + "stop  : Stopping the boat \n";
 	}
 
 	/**

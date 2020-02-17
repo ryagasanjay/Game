@@ -1,4 +1,5 @@
 package objectOrientedAdventure;
+
 import java.util.*;
 import java.lang.*;
 
@@ -11,18 +12,18 @@ public class Level2 extends Utility {
 
 	/**
 	 * Method: Level2() Constructor.
+	 * 
 	 * @param Utility
 	 * @param numberOfMoves
-	 * */
-	public Level2(Utility u3,int numberOfMoves) {
+	 */
+	public Level2(Utility u3, int numberOfMoves) {
 		this.u = u3;
 		this.numberOfMoves = numberOfMoves;
 	}
-	
+
 	/**
-	 * Method: Level2.start().
-	 * continues the story for Level 2
-	 * */
+	 * Method: Level2.start(). continues the story for Level 2
+	 */
 
 	public void start() throws Exception {
 		// TODO Auto-generated method stub
@@ -54,7 +55,7 @@ public class Level2 extends Utility {
 		Thread.sleep(1000);
 		System.out.println("Looks like i need to build one..!!");
 
-		System.out.println("Player: Goes to the nearby trees.");
+		System.out.println("Player: Goes to the nearby trees. You can chop some trees to obtain logs.");
 		System.out.println("Use : knife, map ");
 
 		buildBoat();
@@ -64,7 +65,7 @@ public class Level2 extends Utility {
 				"Yohoo.. Now, i have the boat.. I can reach the Mountains with in no time..\n Thank god i don't have to swim..\n");
 
 		System.out.println(
-				"I have to take the boat to the ocean to get to the Mountains.. \n " + "Use: \npush" + "\nanchor");
+				"I have to push the boat to the ocean to get to the Mountains.. \n " + "Use: \npush" + "\nanchor");
 
 		String le_inst = "";
 		boolean anchorNow = false;
@@ -75,7 +76,7 @@ public class Level2 extends Utility {
 			if (le_inst.contains("push")) {
 				System.out.println("You pushed the boat to the ocean.\nBoat is now floating and ready to steer away..");
 				System.out.println(l2.info());
-
+				System.out.println("Enter fwd to move the boat forward");
 				for (int step = 1; step < 5; step++) {
 					if (step == 1) {
 						le_inst = "";
@@ -102,7 +103,7 @@ public class Level2 extends Utility {
 					if (step == 3) {
 						le_inst = "";
 						System.out.println(
-								"You see a gaint sea gull monster approaching at you.. What do you want to use?"
+								"You see a gaint sea gull monster approaching at you.. What do you want to use?\n"
 										+ "PS: Map wont help you here");
 						u.getChoices();
 						le_inst = scl.next();
@@ -110,13 +111,13 @@ public class Level2 extends Utility {
 						System.out.println(u.UseItemfromBag(le_inst));
 						System.out.println("Phew.. Looks like i'm out of danger..\n"
 								+ "Look. (0-0) that Sea Gull has dropped something..");
-						
+
 						Thread.sleep(1000);
-						System.out.println("A big Oval hard shell.. It could be an Egg? Ball? What do you think? ");
+						System.out.println("It is a big Oval hard shell.. It could be an Egg? Ball? What do you think? ");
 						le_inst = scl.next();
 						numberOfMoves++;
 						System.out.println(u.examine(le_inst));
-						
+
 						System.out.println("Picked it up and stuffed it in the Bag.");
 						u.addItemToBag("egg");
 					}
@@ -152,9 +153,9 @@ public class Level2 extends Utility {
 	}
 
 	/**
-	 * Method: bossLevel().
-	 * continues the story for Level 2 where the player is fighting the last dragon
-	 * */
+	 * Method: bossLevel(). continues the story for Level 2 where the player is
+	 * fighting the last dragon
+	 */
 	private void bossLevel() throws Exception {
 
 		System.out.println("A big paper came flying fell on your face.. Would you like to read? Input: read or throw");
@@ -175,7 +176,7 @@ public class Level2 extends Utility {
 
 		inst = scl.next();
 		numberOfMoves++;
-		
+
 		if (inst.contains("calm")) {
 			System.out.println("What do you think you can use to make the dragon calm? Use:");
 			u.getChoices();
@@ -247,7 +248,7 @@ public class Level2 extends Utility {
 		System.out.println("Thank you so much\n \n");
 		Thread.sleep(2000);
 		System.out.println("******* THE END *********");
-		
+
 		Thread.sleep(2000);
 		System.out.println("Credits:");
 		Thread.sleep(2000);
@@ -255,16 +256,11 @@ public class Level2 extends Utility {
 		Thread.sleep(2000);
 		System.out.println("Screenplay: R sanjay Goud");
 		Thread.sleep(2000);
-		System.out.println("Development Team:\n"
-				+ "R Sanjay Goud\n"
-				+ "Akhil Krishna Hanumanthu\n"
-				+ "Nikhil Grover");
+		System.out.println("Development Team:\n" + "R Sanjay Goud\n" + "Akhil Krishna Hanumanthu\n" + "Nikhil Grover");
 		Thread.sleep(2000);
-		System.out.println("Dedicated to:\n"
-				+ "OOP Assignment - MAD 315");
-		
-		System.out.println("FUN Statistics:"
-				+ "Total Number of moves you took to finish this game:" + numberOfMoves);
+		System.out.println("Dedicated to:\n" + "OOP Assignment - MAD 315");
+
+		System.out.println("FUN Statistics:" + "Total Number of moves you took to finish this game:" + numberOfMoves);
 
 	}
 
@@ -319,7 +315,7 @@ public class Level2 extends Utility {
 				System.out.println(build());
 			} else if (in.indexOf("burn") == 0) {
 				System.out.println(
-						"Sorry.. Do you really want to burn the chopped logs.. then you wont be able to build the boat.");
+						"Sorry.. Are you feeling cold? Do you really want to burn the chopped logs.. then you wont be able to build the boat.");
 				System.out.println("Enter appropriate command to build the boat..");
 			}
 		}
