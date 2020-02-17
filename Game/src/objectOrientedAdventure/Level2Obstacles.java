@@ -1,3 +1,4 @@
+package objectOrientedAdventure;
 
 public class Level2Obstacles implements Obstacles {
 
