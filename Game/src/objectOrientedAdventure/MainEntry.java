@@ -2,8 +2,8 @@ package objectOrientedAdventure;
 /**
  * The Adventure of OOP.
  * @author R Sanjay Goud - 1992554
- * @author Nikhil Grover - 
- * @author Akhil Krishna Hanumanthu
+ * @author Nikhil Grover - 1992618
+ * @author Akhil Krishna Hanumanthu - 1992583
  * 
  * This is the Main class calling in the adventure.
  * */
