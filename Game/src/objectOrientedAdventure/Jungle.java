@@ -1,4 +1,5 @@
 package objectOrientedAdventure;
+
 import java.util.Scanner;
 
 public class Jungle {
@@ -11,8 +12,9 @@ public class Jungle {
 
 	/**
 	 * Method: Start Jungle class Constructor.
+	 * 
 	 * @param Utility Object
-	 * */
+	 */
 	public Jungle(Utility u2) {
 		// TODO Auto-generated constructor stub
 		this.u = u2;
@@ -20,13 +22,13 @@ public class Jungle {
 
 	/**
 	 * Method: Start .
-	 * @param int number of Moves 
-	 * calls the findPattern first riddle.
-	 * At the end calls the Level2 constructor
-	 * */
+	 * 
+	 * @param int number of Moves calls the findPattern first riddle. At the end
+	 *            calls the Level2 constructor
+	 */
 	public void start(int numberOfMoves) throws Exception {
 		this.numberOfMoves = numberOfMoves;
-		
+
 		u.findPattern();
 		String path = followPath();
 
@@ -36,7 +38,6 @@ public class Jungle {
 			path = followPath();
 		}
 		if (path.equalsIgnoreCase("down down right right") || path.equalsIgnoreCase("down right down right")) {
-			Thread.sleep(2000);
 			System.out.println("CONGRATULATIONS..!!"
 					+ "\nYOU HAVE CLEARED YOUR FIRST OBSTACLE IN THIS ADVENTURE.\n\n BOY YOU'RE VERY SMART.. :P \n ");
 			Thread.sleep(2000);
@@ -128,8 +129,10 @@ public class Jungle {
 
 		in = "";
 		do {
-			System.out.println(
-					"Man it's trying to kill you..Choose something with which you can attack like a knife..\n ");
+			if (!in.isBlank()) {
+				System.out.println(
+						"Man it's trying to kill you..Choose something with which you can attack like a knife..\n ");
+			}
 			in = sci.next();
 			numberOfMoves++;
 		} while (!in.equalsIgnoreCase("gun") & !in.equalsIgnoreCase("knife"));
@@ -139,7 +142,7 @@ public class Jungle {
 		if (in.equalsIgnoreCase("knife"))
 			System.out.println(u.chop());
 
-		Thread.sleep(2000);
+		Thread.sleep(1500);
 		System.out.println("Mysterious thing dropped a key. What do you want to do?\n" + "Press 1: Pick it up \n"
 				+ "OR\n" + "0: Ignore it.");
 		Thread.sleep(1500);
@@ -157,17 +160,16 @@ public class Jungle {
 			System.out.println("Player chose to ignore it.. He might regret it later.. :P\n");
 		}
 
-		Thread.sleep(2000);
+		Thread.sleep(1500);
 		System.out.println("Player safely came out of the Jungle.\n \n");
 		System.out.println("Total number of moves until Jungle is finished is :" + numberOfMoves);
-		Level2 l2 = new Level2(u,numberOfMoves);
+		Level2 l2 = new Level2(u, numberOfMoves);
 		l2.start();
 	}
 
 	/**
-	 * Method: followPath()
-	 * method to take the right pattern commands
-	 * */
+	 * Method: followPath() method to take the right pattern commands
+	 */
 	private String followPath() {
 		String pattern = "";
 		String[] count = {};
