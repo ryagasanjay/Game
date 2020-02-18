@@ -23,7 +23,8 @@ public class Jungle {
 	/**
 	 * Method: Start .
 	 * 
-	 * @param int number of Moves calls the findPattern first riddle. At the end
+	 * @param int numberOfMoves:
+	 *  calls the findPattern first riddle. At the end
 	 *            calls the Level2 constructor
 	 */
 	public void start(int numberOfMoves) throws Exception {
@@ -41,7 +42,7 @@ public class Jungle {
 			System.out.println("CONGRATULATIONS..!!"
 					+ "\nYOU HAVE CLEARED YOUR FIRST OBSTACLE IN THIS ADVENTURE.\n\n BOY YOU'RE VERY SMART.. :P \n ");
 			Thread.sleep(2000);
-			System.out.println("********************Level I: NOBODY IS SAFE IN THE JUNGLE**************** \n \n");
+			System.out.println("********************Level I: NOBODY IS SAFE IN THE JUNGLE**************** \n\n");
 			Thread.sleep(1000);
 
 			System.out.println(

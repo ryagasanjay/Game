@@ -112,12 +112,12 @@ public class Utility implements Actables {
 			return "No..It's a dragon egg.. Just hope there is no dragon around.. :O :O";
 		}
 		return "Yes..It's a dragon egg.. I can't believe it.I hope there is no dragon around.. :O :O";
-
 	}
 
 	/**
 	 * Method: findPattern.
 	 * Pattern path riddle Obstacle
+	 * like down right left right
 	 * */
 	@Override
 	public void findPattern() {
