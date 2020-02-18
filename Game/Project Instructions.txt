@@ -1,0 +1,3 @@
+Known Error Configuration: You need JRE System Library 12 to run the project. 
+If you dont have it you might see Class not Found exception.
+Fix: Install JRE12 before running this project.
